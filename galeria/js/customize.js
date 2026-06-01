@@ -133,11 +133,11 @@ function renderCards() {
   container.innerHTML = '';
 
   obras.forEach(obra => {
-    const fav = isFavorito(obra.id);
+    const fav  = isFavorito(obra.id);
     const card = document.createElement('div');
-    card.className = 'ui card obra-card';
+    card.className  = 'ui card obra-card';
     card.dataset.id = obra.id;
-    card.innerHTML = `
+    card.innerHTML  = `
       <div class="image card-img-wrapper">
         <img src="${obra.imagem}" alt="${obra.titulo}">
         <i class="heart icon card-fav-icon ${fav ? 'visible' : ''}" data-fav-id="${obra.id}"></i>
@@ -157,7 +157,7 @@ function renderCards() {
 }
 
 function updateCardFavIcon(id) {
-  const fav = isFavorito(id);
+  const fav  = isFavorito(id);
   const icon = document.querySelector(`[data-fav-id="${id}"]`);
   if (icon) icon.classList.toggle('visible', fav);
 }
@@ -172,17 +172,17 @@ function openModal(id) {
   if (!obra) return;
   obraAtualId = id;
 
-  document.getElementById('modal-img').src = obra.imagem;
-  document.getElementById('modal-img').alt = obra.titulo;
-  document.getElementById('modal-titulo').textContent = obra.titulo;
+  document.getElementById('modal-img').src             = obra.imagem;
+  document.getElementById('modal-img').alt             = obra.titulo;
+  document.getElementById('modal-titulo').textContent  = obra.titulo;
   document.getElementById('modal-artista').textContent = obra.artista;
-  document.getElementById('modal-ano').textContent = obra.ano;
+  document.getElementById('modal-ano').textContent     = obra.ano;
   document.getElementById('modal-descricao').textContent = obra.descricao;
   document.getElementById('modal-preco-val').textContent = obra.preco;
 
-  const contatoEl = document.getElementById('modal-contato');
+  const contatoEl     = document.getElementById('modal-contato');
   contatoEl.textContent = obra.contato;
-  contatoEl.href = 'mailto:' + obra.contato;
+  contatoEl.href        = 'mailto:' + obra.contato;
 
   atualizarBotaoFav(id);
 
@@ -199,9 +199,7 @@ function closeModal() {
 }
 
 function atualizarBotaoFav(id) {
-  const btn = document.getElementById('modal-fav-btn');
-  const fav = isFavorito(id);
-  btn.classList.toggle('favorited', fav);
+  document.getElementById('modal-fav-btn').classList.toggle('favorited', isFavorito(id));
 }
 
 // ============================================================
@@ -233,13 +231,12 @@ function aplicarPaleta(nome) {
   const p = paletas[nome];
   if (!p) return;
   const root = document.documentElement;
-  root.style.setProperty('--bg-color', p.bg);
-  root.style.setProperty('--text-color', p.text);
+  root.style.setProperty('--bg-color',     p.bg);
+  root.style.setProperty('--text-color',   p.text);
   root.style.setProperty('--accent-color', p.accent);
-
-  document.querySelectorAll('.palette-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.palette === nome);
-  });
+  document.querySelectorAll('.palette-btn').forEach(btn =>
+    btn.classList.toggle('active', btn.dataset.palette === nome)
+  );
 }
 
 // ============================================================
@@ -254,14 +251,14 @@ function salvarPreferencia(chave, valor) {
 // ============================================================
 function carregarPreferencias() {
   if (!cookiesAceitos()) return;
-  const fonte = getCookie('fonte_preferida');
-  if (fonte) aplicarFonte(fonte);
+  const fonte  = getCookie('fonte_preferida');
+  if (fonte)  aplicarFonte(fonte);
   const paleta = getCookie('paleta_preferida');
   if (paleta) aplicarPaleta(paleta);
 }
 
 // ============================================================
-// BANNER DE CONSENTIMENTO
+// BANNER DE CONSENTIMENTO DE COOKIES
 // ============================================================
 function initBannerCookies() {
   const consentimento = getCookie('cookies_aceitos');
