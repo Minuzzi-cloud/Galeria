@@ -199,7 +199,6 @@ function renderCards() {
     card.innerHTML  = `
       <div class="image card-img-wrapper">
         <img src="${obra.imagem}" alt="${obra.titulo}">
-        <i class="heart icon card-fav-icon ${fav ? 'visible' : ''}" data-fav-id="${obra.id}"></i>
       </div>
       <div class="content">
         <div class="header card-titulo">${obra.titulo}</div>

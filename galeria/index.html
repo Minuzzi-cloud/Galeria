@@ -5,13 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arte em Foco</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <!-- ── HEADER ──────────────────────────────────────────────── -->
   <div id="main-header">
-    <h1><i class="paint brush icon"></i> Arte em Foco</h1>
+    <div id="header-brand">
+      <h1><i class="paint brush icon"></i> Arte em Foco</h1>
+      <span id="header-tagline">Galeria de Arte Contemporânea</span>
+    </div>
     <button id="btn-edicao" class="ui small button">
       <i class="settings icon"></i> Edição
     </button>
@@ -23,11 +27,12 @@
   <!-- ── CONTEÚDO PRINCIPAL ──────────────────────────────────── -->
   <div id="main-content">
     <div class="ui container">
-      <p id="gallery-title">
-        <i class="images outline icon"></i> Exposição em Cartaz
-      </p>
+      <div id="gallery-title">
+        <h2 class="section-title">Exposição em Cartaz</h2>
+        <p class="section-subtitle">Obras selecionadas de artistas contemporâneos brasileiros</p>
+      </div>
       <!-- Cards inseridos pelo customize.js -->
-      <div id="cards-container" class="ui four stackable cards"></div>
+      <div id="cards-container" class="ui three stackable cards"></div>
     </div>
   </div>
 
