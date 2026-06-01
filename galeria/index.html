@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arte em Foco</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ── HEADER ──────────────────────────────────────────────── -->
+  <div id="main-header">
+    <h1><i class="paint brush icon"></i> Arte em Foco</h1>
+    <button id="btn-edicao" class="ui small button">
+      <i class="settings icon"></i> Edição
+    </button>
+  </div>
+
+  <!-- ── OVERLAY ─────────────────────────────────────────────── -->
+  <div id="overlay"></div>
+
+  <!-- ── CONTEÚDO PRINCIPAL ──────────────────────────────────── -->
+  <div id="main-content">
+    <div class="ui container">
+      <p id="gallery-title">
+        <i class="images outline icon"></i> Exposição em Cartaz
+      </p>
+      <!-- Cards inseridos pelo customize.js -->
+      <div id="cards-container" class="ui four stackable cards"></div>
+    </div>
+  </div>
+
+  <!-- ── MODAL DA OBRA ───────────────────────────────────────── -->
+  <div id="obra-modal" role="dialog" aria-modal="true">
+    <img id="modal-img" src="" alt="">
+    <div class="modal-body">
+      <div id="modal-titulo"></div>
+      <div class="modal-meta">
+        <span id="modal-artista"></span>
+        &nbsp;&bull;&nbsp;
+        <span id="modal-ano"></span>
+      </div>
+      <p id="modal-descricao"></p>
+      <div class="modal-info-row">
+        <strong>Preço:</strong>&nbsp;
+        <span id="modal-preco-val"></span>
+      </div>
+      <div class="modal-info-row">
+        <strong>Contato:</strong>&nbsp;
+        <a id="modal-contato" href=""></a>
+      </div>
+      <div class="modal-footer">
+        <button id="modal-voltar" class="ui button">
+          <i class="arrow left icon"></i> Voltar
+        </button>
+        <button id="modal-fav-btn" title="Favoritar / Desfavoritar">
+          <i class="heart icon"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PAINEL DE PERSONALIZAÇÃO ────────────────────────────── -->
+  <div id="customize-panel">
+    <button id="btn-fechar-painel" title="Fechar painel">
+      <i class="times icon"></i>
+    </button>
+    <h3><i class="sliders horizontal icon"></i> Personalização</h3>
+
+    <span class="panel-label">Fonte</span>
+    <select id="font-select">
+      <option value="sans-serif">Padrão (sans-serif)</option>
+      <option value="Georgia, serif">Serif (Georgia)</option>
+      <option value="'Courier New', Courier, monospace">Monospace (Courier New)</option>
+      <option value="'Trebuchet MS', Helvetica, sans-serif">Moderna (Trebuchet MS)</option>
+    </select>
+
+    <span class="panel-label">Paleta de Cores</span>
+    <div class="palette-row">
+      <div class="palette-btn-wrap">
+        <button class="palette-btn" data-palette="claro" title="Claro"
+          style="background: linear-gradient(135deg, #ffffff 50%, #2185d0 50%); border-color: #ddd;"></button>
+        <span class="palette-label">Claro</span>
+      </div>
+      <div class="palette-btn-wrap">
+        <button class="palette-btn" data-palette="escuro" title="Escuro"
+          style="background: linear-gradient(135deg, #1b1c1d 50%, #00b5ad 50%);"></button>
+        <span class="palette-label">Escuro</span>
+      </div>
+      <div class="palette-btn-wrap">
+        <button class="palette-btn" data-palette="sepia" title="Sépia"
+          style="background: linear-gradient(135deg, #f4ecd8 50%, #a0522d 50%);"></button>
+        <span class="palette-label">Sépia</span>
+      </div>
+      <div class="palette-btn-wrap">
+        <button class="palette-btn" data-palette="minimalista" title="Minimalista"
+          style="background: linear-gradient(135deg, #fafafa 50%, #e91e63 50%); border-color: #ddd;"></button>
+        <span class="palette-label">Minimal</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── BANNER DE CONSENTIMENTO DE COOKIES ──────────────────── -->
+  <div id="cookie-banner">
+    <p>
+      <i class="info circle icon"></i>
+      Usamos cookies para salvar suas preferências de personalização. Deseja aceitar?
+    </p>
+    <div class="cookie-actions">
+      <button id="btn-aceitar-cookies" class="ui small positive button">
+        <i class="check icon"></i> Aceitar
+      </button>
+      <button id="btn-recusar-cookies" class="ui small basic inverted button">
+        Recusar
+      </button>
+    </div>
+  </div>
+
+  <!-- ── SCRIPTS ─────────────────────────────────────────────── -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+  <script src="js/customize.js"></script>
+
+</body>
+</html>
