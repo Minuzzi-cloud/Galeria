@@ -67,7 +67,62 @@ const obras = [
     descricao: "Uma meditação sobre a infinidade do mar e o ciclo eterno das ondas do Nordeste. Técnica mista com areia real coletada nas praias do litoral brasileiro. A obra captura o movimento e o poder da natureza de forma única e imersiva.",
     contato: "pedro.cavalcanti@mareart.com.br",
     favorito: false
-  }
+  },
+  {
+    id: 7,
+    imagem: "https://images.unsplash.com/photo-1582561424760-0321d75e81fa?w=800&q=80",
+    titulo: "Dança das Cores",
+    artista: "Fernanda Brito",
+    ano: 2022,
+    preco: "R$ 5.300,00",
+    descricao: "Uma celebração da alegria através de formas geométricas e cores saturadas em movimento. A tela vibra com energia cinética, como se os elementos dançassem ao ritmo de um batuque invisível. Fernanda Brito é reconhecida por transformar emoções em geometria pura.",
+    contato: "fernanda.brito@dancadascores.art",
+    favorito: false
+  },
+  {
+    id: 8,
+    imagem: "https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=800&q=80",
+    titulo: "Memória Líquida",
+    artista: "Gustavo Almeida",
+    ano: 2020,
+    preco: "R$ 9.400,00",
+    descricao: "Aquarelas dissolvidas em camadas translúcidas evocam memórias que escorregam pela consciência como água entre os dedos. A obra explora a impermanência das lembranças e a beleza do esquecimento. Uma das peças mais aclamadas da carreira de Gustavo Almeida.",
+    contato: "gustavo.almeida@liquidart.com.br",
+    favorito: false
+  },
+  {
+    id: 9,
+    imagem: "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800&q=80",
+    titulo: "Sertão Vivo",
+    artista: "Beatriz Nascimento",
+    ano: 2021,
+    preco: "R$ 4.900,00",
+    descricao: "Uma homenagem à resistência e à beleza árida do sertão nordestino. Ocres, vermelhos e amarelos queimados constroem uma paisagem que pulsa vida mesmo na secura. Beatriz Nascimento nasceu no Ceará e pinta o semi-árido como poucos artistas conseguem.",
+    contato: "beatriz.nascimento@sertaoarte.com",
+    favorito: false
+  },
+  {
+    id: 10,
+    imagem: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    titulo: "Geometria do Caos",
+    artista: "Rodrigo Vieira",
+    ano: 2023,
+    preco: "R$ 11.200,00",
+    descricao: "Padrões fractais gerados à mão revelam a ordem oculta dentro do aparente caos. Cada centímetro da tela esconde novos detalhes para quem se aproxima. Rodrigo Vieira leva meses produzindo cada obra e nunca repete um padrão.",
+    contato: "rodrigo.vieira@caosgeometrico.art",
+    favorito: false
+  },
+  {
+    id: 11,
+    imagem: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&q=80",
+    titulo: "Retrato da Cidade",
+    artista: "Camila Torres",
+    ano: 2019,
+    preco: "R$ 6.800,00",
+    descricao: "Um olhar poético sobre a arquitetura e as pessoas que habitam os grandes centros urbanos brasileiros. A paleta fria contrasta com a humanidade calorosa dos personagens retratados. Camila Torres documenta o cotidiano das metrópoles com sensibilidade ímpar.",
+    contato: "camila.torres@retratourbano.com.br",
+    favorito: false
+  },
 ];
 
 // ============================================================
@@ -77,7 +132,11 @@ const paletas = {
   claro:       { bg: '#ffffff', text: '#333333', accent: '#2185d0' },
   escuro:      { bg: '#1b1c1d', text: '#f0f0f0', accent: '#00b5ad' },
   sepia:       { bg: '#f4ecd8', text: '#5b4636', accent: '#a0522d' },
-  minimalista: { bg: '#fafafa', text: '#333333', accent: '#e91e63' }
+  minimalista: { bg: '#fafafa', text: '#333333', accent: '#e91e63' },
+  lavanda:     { bg: '#f0ebff', text: '#3d2b6b', accent: '#7c4dff' },
+  floresta:    { bg: '#f0f7f0', text: '#1b3a1b', accent: '#2e7d32' },
+  oceano:      { bg: '#e8f4fd', text: '#0d2137', accent: '#0277bd' },
+  crepusculo:  { bg: '#1a0a2e', text: '#e8d5f5', accent: '#ce93d8' }
 };
 
 // ============================================================
