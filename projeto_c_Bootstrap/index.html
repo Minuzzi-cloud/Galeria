@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arte em Foco</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- CSS customizado -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ── NAVBAR ────────────────────────────────────────────── -->
+  <nav class="navbar fixed-top" id="main-header">
+    <div class="container-fluid px-4">
+      <div id="header-brand">
+        <span class="navbar-brand mb-0 h1">
+          <i class="bi bi-palette2"></i> Arte em Foco
+        </span>
+        <small id="header-tagline">Galeria de Arte Contemporânea</small>
+      </div>
+      <button class="btn btn-outline-light btn-sm" id="btn-edicao"
+              data-bs-toggle="offcanvas" data-bs-target="#customize-panel">
+        <i class="bi bi-gear"></i> Edição
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── CONTEÚDO PRINCIPAL ───────────────────────────────── -->
+  <main id="main-content">
+    <div class="container">
+
+      <div id="gallery-title" class="text-center mb-5">
+        <h2 class="section-title">Exposição em Cartaz</h2>
+        <p class="section-subtitle">Obras selecionadas de artistas contemporâneos brasileiros</p>
+      </div>
+
+      <!-- Cards gerados pelo customize.js -->
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="cards-container"></div>
+
+    </div>
+  </main>
+
+  <!-- ── MODAL DA OBRA ────────────────────────────────────── -->
+  <div class="modal fade" id="obra-modal" tabindex="-1" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <img id="modal-img" src="" alt="" class="modal-hero-img">
+        <div class="modal-body pt-4">
+          <div id="modal-titulo"></div>
+          <div class="modal-meta">
+            <span id="modal-artista"></span>
+            &nbsp;&bull;&nbsp;
+            <span id="modal-ano"></span>
+          </div>
+          <p id="modal-descricao" class="mt-3"></p>
+          <div class="modal-info-row">
+            <strong>Preço:</strong>&nbsp;
+            <span id="modal-preco-val"></span>
+          </div>
+          <div class="modal-info-row mt-1">
+            <strong>Contato:</strong>&nbsp;
+            <a id="modal-contato" href=""></a>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button id="modal-voltar" class="btn btn-secondary" data-bs-dismiss="modal">
+            <i class="bi bi-arrow-left"></i> Voltar
+          </button>
+          <button id="modal-fav-btn" class="btn-fav" title="Favoritar / Desfavoritar">
+            <i class="bi bi-heart"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── OFFCANVAS DE PERSONALIZAÇÃO ──────────────────────── -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="customize-panel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">
+        <i class="bi bi-sliders"></i> Personalização
+      </h5>
+      <button type="button" class="btn-close" id="btn-fechar-painel"
+              data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+    </div>
+    <div class="offcanvas-body">
+
+      <label class="panel-label" for="font-select">Fonte</label>
+      <select id="font-select" class="form-select mb-4">
+        <option value="sans-serif">Padrão (sans-serif)</option>
+        <option value="Georgia, serif">Serif (Georgia)</option>
+        <option value="'Courier New', Courier, monospace">Monospace (Courier New)</option>
+        <option value="'Trebuchet MS', Helvetica, sans-serif">Moderna (Trebuchet MS)</option>
+      </select>
+
+      <span class="panel-label d-block mb-2">Paleta de Cores</span>
+      <div class="palette-row">
+        <div class="palette-btn-wrap">
+          <button class="palette-btn" data-palette="claro" title="Claro"
+            style="background: linear-gradient(135deg, #ffffff 50%, #2185d0 50%); border-color: #ddd;"></button>
+          <span class="palette-label">Claro</span>
+        </div>
+        <div class="palette-btn-wrap">
+          <button class="palette-btn" data-palette="escuro" title="Escuro"
+            style="background: linear-gradient(135deg, #1b1c1d 50%, #00b5ad 50%);"></button>
+          <span class="palette-label">Escuro</span>
+        </div>
+        <div class="palette-btn-wrap">
+          <button class="palette-btn" data-palette="sepia" title="Sépia"
+            style="background: linear-gradient(135deg, #f4ecd8 50%, #a0522d 50%);"></button>
+          <span class="palette-label">Sépia</span>
+        </div>
+        <div class="palette-btn-wrap">
+          <button class="palette-btn" data-palette="minimalista" title="Minimalista"
+            style="background: linear-gradient(135deg, #fafafa 50%, #e91e63 50%); border-color: #ddd;"></button>
+          <span class="palette-label">Minimal</span>
+        </div>
+        <div class="palette-btn-wrap">
+          <button class="palette-btn" data-palette="lavanda" title="Lavanda"
+            style="background: linear-gradient(135deg, #f0ebff 50%, #7c4dff 50%); border-color: #ddd;"></button>
+          <span class="palette-label">Lavanda</span>
+        </div>
+        <div class="palette-btn-wrap">
+          <button class="palette-btn" data-palette="floresta" title="Floresta"
+            style="background: linear-gradient(135deg, #f0f7f0 50%, #2e7d32 50%); border-color: #ddd;"></button>
+          <span class="palette-label">Floresta</span>
+        </div>
+        <div class="palette-btn-wrap">
+          <button class="palette-btn" data-palette="oceano" title="Oceano"
+            style="background: linear-gradient(135deg, #e8f4fd 50%, #0277bd 50%); border-color: #ddd;"></button>
+          <span class="palette-label">Oceano</span>
+        </div>
+        <div class="palette-btn-wrap">
+          <button class="palette-btn" data-palette="crepusculo" title="Crepúsculo"
+            style="background: linear-gradient(135deg, #1a0a2e 50%, #ce93d8 50%);"></button>
+          <span class="palette-label">Crepúsc.</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── BANNER DE CONSENTIMENTO DE COOKIES ───────────────── -->
+  <div id="cookie-banner" class="fixed-bottom" style="display:none;">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 px-4 py-3">
+      <p class="mb-0 text-white">
+        <i class="bi bi-info-circle me-1"></i>
+        Usamos cookies para salvar suas preferências de personalização. Deseja aceitar?
+      </p>
+      <div class="d-flex gap-2 flex-shrink-0">
+        <button id="btn-aceitar-cookies" class="btn btn-success btn-sm">
+          <i class="bi bi-check-lg"></i> Aceitar
+        </button>
+        <button id="btn-recusar-cookies" class="btn btn-outline-light btn-sm">
+          Recusar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SCRIPTS ──────────────────────────────────────────── -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/customize.js"></script>
+
+</body>
+</html>
